@@ -1,0 +1,66 @@
+public static void insert (String word, int pos){
+  //run backwards through an array and set each value up until the one of the pos equal to the number before it in the array
+  for (int i = arr.length-1; i > pos + 1; i--){
+    arr[i] = arr[i-1];
+  }
+  //then make the one at the index equal to the input in the parameters
+  arr[pos] = word;
+}
+// completely correct
+
+
+public static void remove(String[] a, int pos){
+  //run throught the array and set each value to the one after it
+  for (int i = pos; i < arr.length-1; i++){
+    a[i] = a[i+1];
+  }
+  // if there are two repeating values within the warray, then make the senc value null
+  //doesn't work for preexisting duplicate values
+  for (int i = 0; i < a.length; i++){
+    if (a[i].equals(a[i+1])){
+      a[i+1] = "";
+    }
+  }
+  //works for all values
+  a[length-1] = "";
+}
+
+public static voice remove3L(){
+  //to hold position of removed object
+  int pos; 
+  //to hold t
+  int changed = 0;
+
+  //outer loop runs to try and find words with length >3
+  for (int i = 0; i < arr.length; i++){
+    //if length > 3, then remove the value and shift the rest
+    if (arr[i].length > 3){
+      pos = i;
+      //new loop to shift them all back one
+      for (int j = pos; j < arr.length -1; j++){
+      //makes the value of the current index that of the next index
+        a[i] = a[i+1];
+      }
+      // confirmed that we have indeed shifted them
+      changed +=1;
+    }
+  }
+  //if the have been shifter at all, then make the last value in the array null
+  if (changed != 0){
+    for (int i = arr.length; i > arr.length-1-changed; i--){
+       arr[length - i] = "";
+    }
+  }
+}
+
+
+public int void multiplicationTable(arr[][]){
+  for (int i = 1, i <=10; i++){
+    for (int j = 1; j <=10; j++){
+      arr[i][j] = i * j;
+      return arr[i][j];
+      System.out.print(arr[i][j]);
+    }
+    System.out.println();
+  }
+}
